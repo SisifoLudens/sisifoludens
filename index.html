@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tu Nombre | Ink & Oil</title>
-  <meta name="description" content="Portafolio bilingüe de dibujo a tinta y pintura al óleo. Obra personal y encargos." />
+  <title>Sísifo | Ink & Oil — Artist in Mexico</title>
+  <meta name="description" content="Bilingual portfolio of ink drawings and oil paintings by Sísifo, an artist based in Mexico. Personal work and commissions." />
   <style>
-    /* --- PALETA MONOCROMÁTICA ELEGANTE --- */
     :root {
-      --bg: #0a0a0a;           /* Negro profundo, no puro, más elegante */
-      --text: #e8e8e8;         /* Blanco roto, menos agresivo que #fff */
-      --muted: #7a7a7a;        /* Gris para textos secundarios */
-      --line: #222222;         /* Líneas sutiles para estructura */
-      --accent: #ffffff;       /* Acento solo para hover o botones clave */
+      --bg: #0a0a0a;
+      --text: #e8e8e8;
+      --muted: #7a7a7a;
+      --line: #222222;
+      --accent: #ffffff;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -23,25 +22,22 @@
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
-      /* Un pequeño truco para que la tipografía se vea más refinada */
       font-weight: 300;
       letter-spacing: 0.02em;
     }
 
-    /* --- TIPOGRAFÍA: LA CLAVE DEL PROFESIONALISMO --- */
-    /* Usamos una serif elegante para títulos (si el sistema la tiene) */
     h1, h2, h3 {
       font-family: Georgia, 'Times New Roman', serif;
       font-weight: normal;
       letter-spacing: 0.05em;
     }
 
-    /* Ocultar idioma no activo */
+    /* Ocultar el idioma no activo */
     [data-lang] { display: none; }
-    html[lang="es"] [data-lang="es"],
-    html[lang="en"] [data-lang="en"] { display: block; }
+    html[lang="en"] [data-lang="en"],
+    html[lang="es"] [data-lang="es"] { display: block; }
 
-    /* --- SELECTOR DE IDIOMA (Discreto) --- */
+    /* Selector de idioma */
     .lang-switch {
       position: fixed;
       top: 2rem;
@@ -63,9 +59,9 @@
       border-color: var(--text);
     }
 
-    /* --- ENCABEZADO (Hero) --- */
+    /* Encabezado */
     header {
-      min-height: 90vh; /* Casi pantalla completa, para impacto */
+      min-height: 90vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -89,7 +85,7 @@
       max-width: 600px;
     }
 
-    /* --- NAVEGACIÓN (Fija, minimalista) --- */
+    /* Navegación */
     nav {
       position: sticky;
       top: 0;
@@ -114,7 +110,6 @@
     }
     nav a:hover { color: var(--text); }
 
-    /* --- SECCIONES --- */
     section {
       max-width: 1200px;
       margin: 0 auto;
@@ -126,7 +121,6 @@
       text-align: center;
       margin-bottom: 4rem;
       color: var(--text);
-      /* Un guión bajo decorativo muy sutil */
       position: relative;
       padding-bottom: 1.5rem;
     }
@@ -150,7 +144,7 @@
       line-height: 1.8;
     }
 
-    /* --- GALERÍA ESTILO EDITORIAL --- */
+    /* Galería */
     .galeria {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -160,15 +154,15 @@
     .obra {
       display: flex;
       flex-direction: column;
-      background: transparent; /* Sin fondo blanco, todo integrado */
+      background: transparent;
     }
 
     .obra img {
       width: 100%;
-      height: auto; /* Mantener proporción real del arte */
-      max-height: 70vh; /* Evitar que una imagen vertical se coma la pantalla */
-      object-fit: contain; /* Mostrar la obra completa, no recortada */
-      background: #111; /* Fondo por si la imagen tiene transparencias */
+      height: auto;
+      max-height: 70vh;
+      object-fit: contain;
+      background: #111;
       border: 1px solid var(--line);
       transition: opacity 0.4s ease;
     }
@@ -176,7 +170,7 @@
 
     .obra-info {
       padding: 1.5rem 0;
-      text-align: center; /* Centrado se ve más limpio en este layout */
+      text-align: center;
     }
 
     .obra-info h3 {
@@ -194,7 +188,6 @@
       margin-bottom: 1.5rem;
     }
 
-    /* Botón de compra muy discreto */
     .boton {
       display: inline-block;
       color: var(--text);
@@ -212,7 +205,7 @@
       border-color: var(--text);
     }
 
-    /* --- SOBRE MÍ (Texto alineado a la izquierda para lectura) --- */
+    /* Sobre mí */
     #sobre-mi .intro {
       text-align: left;
       max-width: 800px;
@@ -222,7 +215,7 @@
     }
     #sobre-mi p + p { margin-top: 1.5rem; }
 
-    /* --- CONTACTO --- */
+    /* Contacto */
     .contacto { text-align: center; }
     .contacto p { color: var(--muted); margin-bottom: 3rem; }
 
@@ -241,7 +234,6 @@
       color: var(--bg);
     }
 
-    /* --- PIE --- */
     footer {
       text-align: center;
       padding: 3rem;
@@ -256,95 +248,95 @@
       header h1 { font-size: 2.2rem; }
       nav { gap: 1.5rem; }
       section { padding: 4rem 1.5rem; }
-      .galeria { grid-template-columns: 1fr; } /* Una columna en móvil */
+      .galeria { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
   <!-- SELECTOR DE IDIOMA -->
-  <button class="lang-switch" id="langSwitch" onclick="toggleLang()">EN / ES</button>
+  <button class="lang-switch" id="langSwitch" onclick="toggleLang()">ES / EN</button>
 
-  <!-- ENCABEZADO (Hero) -->
+  <!-- ENCABEZADO -->
   <header>
-    <h1>Sisifo</h1>
-    <p data-lang="es">Dibujo a tinta · Pintura al óleo · Obra personal</p>
-    <p data-lang="en">Ink drawing · Oil painting · Personal work</p>
+    <h1>Sísifo</h1>
+    <p data-lang="en">Ink drawing · Oil painting · Mexico</p>
+    <p data-lang="es">Dibujo a tinta · Pintura al óleo · México</p>
   </header>
 
   <!-- NAVEGACIÓN -->
   <nav>
-    <a href="#galeria" data-lang="es">Galería</a>
     <a href="#galeria" data-lang="en">Gallery</a>
-    <a href="#sobre-mi" data-lang="es">Sobre mí</a>
+    <a href="#galeria" data-lang="es">Galería</a>
     <a href="#sobre-mi" data-lang="en">About</a>
-    <a href="#contacto" data-lang="es">Contacto</a>
+    <a href="#sobre-mi" data-lang="es">Sobre mí</a>
     <a href="#contacto" data-lang="en">Contact</a>
+    <a href="#contacto" data-lang="es">Contacto</a>
   </nav>
 
   <!-- GALERÍA -->
   <section id="galeria">
-    <h2 data-lang="es">Trabajo reciente</h2>
     <h2 data-lang="en">Recent work</h2>
+    <h2 data-lang="es">Trabajo reciente</h2>
 
-    <p class="intro" data-lang="es">
-      Una selección de dibujos a tinta y pinturas al óleo.
-    </p>
     <p class="intro" data-lang="en">
       A selection of ink drawings and oil paintings.
+    </p>
+    <p class="intro" data-lang="es">
+      Una selección de dibujos a tinta y pinturas al óleo.
     </p>
 
     <div class="galeria">
 
       <!-- Obra 1 -->
       <div class="obra">
-        <img src="imagenes/obra1.jpg" alt="Dibujo a tinta 1 / Ink drawing 1" />
+        <img src="imagenes/obra1.jpg" alt="Ink drawing by Sísifo / Dibujo a tinta de Sísifo" />
         <div class="obra-info">
-          <h3 data-lang="es">Título de la obra</h3>
           <h3 data-lang="en">Artwork title</h3>
-          <p data-lang="es">Tinta sobre papel · 2026</p>
+          <h3 data-lang="es">Título de la obra</h3>
           <p data-lang="en">Ink on paper · 2026</p>
-          <a class="boton" href="#" target="_blank" data-lang="es">Ver / Comprar</a>
+          <p data-lang="es">Tinta sobre papel · 2026</p>
           <a class="boton" href="#" target="_blank" data-lang="en">View / Buy</a>
+          <a class="boton" href="#" target="_blank" data-lang="es">Ver / Comprar</a>
         </div>
       </div>
 
       <!-- Obra 2 -->
       <div class="obra">
-        <img src="imagenes/obra2.jpg" alt="Dibujo a tinta 2 / Ink drawing 2" />
+        <img src="imagenes/obra2.jpg" alt="Ink drawing by Sísifo / Dibujo a tinta de Sísifo" />
         <div class="obra-info">
-          <h3 data-lang="es">Título de la obra</h3>
           <h3 data-lang="en">Artwork title</h3>
-          <p data-lang="es">Tinta sobre papel · 2026</p>
+          <h3 data-lang="es">Título de la obra</h3>
           <p data-lang="en">Ink on paper · 2026</p>
-          <a class="boton" href="#" target="_blank" data-lang="es">Ver / Comprar</a>
+          <p data-lang="es">Tinta sobre papel · 2026</p>
           <a class="boton" href="#" target="_blank" data-lang="en">View / Buy</a>
+          <a class="boton" href="#" target="_blank" data-lang="es">Ver / Comprar</a>
         </div>
       </div>
 
       <!-- Obra 3 -->
       <div class="obra">
-        <img src="imagenes/obra3.jpg" alt="Pintura al óleo 1 / Oil painting 1" />
+        <img src="imagenes/obra3.jpg" alt="Oil painting by Sísifo / Pintura al óleo de Sísifo" />
         <div class="obra-info">
-          <h3 data-lang="es">Título de la obra</h3>
           <h3 data-lang="en">Artwork title</h3>
-          <p data-lang="es">Óleo sobre lienzo · 2026</p>
+          <h3 data-lang="es">Título de la obra</h3>
           <p data-lang="en">Oil on canvas · 2026</p>
-          <a class="boton" href="#" target="_blank" data-lang="es">Ver / Comprar</a>
+          <p data-lang="es">Óleo sobre lienzo · 2026</p>
           <a class="boton" href="#" target="_blank" data-lang="en">View / Buy</a>
+          <a class="boton" href="#" target="_blank" data-lang="es">Ver / Comprar</a>
         </div>
       </div>
 
       <!-- Obra 4 -->
       <div class="obra">
-        <img src="imagenes/obra4.jpg" alt="Pintura al óleo 2 / Oil painting 2" />
+        <img src="imagenes/obra4.jpg" alt="Oil painting by Sísifo / Pintura al óleo de Sísifo" />
         <div class="obra-info">
-          <h3 data-lang="es">Título de la obra</h3>
           <h3 data-lang="en">Artwork title</h3>
-          <p data-lang="es">Óleo sobre lienzo · 2026</p>
+          <h3 data-lang="es">Título de la obra</h3>
           <p data-lang="en">Oil on canvas · 2026</p>
-          <a class="boton" href="#" target="_blank" data-lang="es">Ver / Comprar</a>
+          <p data-lang="es">Óleo sobre lienzo · 2026</p>
           <a class="boton" href="#" target="_blank" data-lang="en">View / Buy</a>
+          <a class="boton" href="#" target="_blank" data-lang="es">Ver / Comprar</a>
         </div>
       </div>
 
@@ -353,60 +345,64 @@
 
   <!-- SOBRE MÍ -->
   <section id="sobre-mi">
-    <h2 data-lang="es">Sobre mí</h2>
     <h2 data-lang="en">About</h2>
+    <h2 data-lang="es">Sobre mí</h2>
 
+    <p class="intro" data-lang="en">
+      I am Sísifo, an artist based in Mexico. I work in ink drawing and oil
+      painting from a single search: form and subject are born from the same
+      place. I am interested in art that does not console, but reveals.
+    </p>
     <p class="intro" data-lang="es">
-      Soy [Tu Nombre], artista de [Ciudad, País]. Trabajo el dibujo a tinta y la
+      Soy Sísifo, artista radicado en México. Trabajo el dibujo a tinta y la
       pintura al óleo desde una misma búsqueda: la forma y el tema nacen del
       mismo lugar. Me interesa el arte que no consuela, sino que muestra.
     </p>
-    <p class="intro" data-lang="en">
-      I am [Your Name], an artist based in [City, Country]. I work in ink drawing
-      and oil painting from a single search: form and subject are born from the
-      same place. I am interested in art that does not console, but reveals.
-    </p>
 
-    <p class="intro" data-lang="es">
-      Este espacio reúne parte de mi proceso y mi obra terminada.
-    </p>
     <p class="intro" data-lang="en">
-      This space gathers part of my process and my finished work.
+      After recovering from thyroid cancer, I left teaching to build a life
+      around art. This space gathers part of my process and my finished work.
+    </p>
+    <p class="intro" data-lang="es">
+      Tras recuperarme de un cáncer de tiroides, dejé la docencia para construir
+      una vida en torno al arte. Este espacio reúne parte de mi proceso y mi
+      obra terminada.
     </p>
   </section>
 
   <!-- CONTACTO -->
   <section id="contacto">
-    <h2 data-lang="es">Contacto y encargos</h2>
     <h2 data-lang="en">Contact & commissions</h2>
+    <h2 data-lang="es">Contacto y encargos</h2>
 
-    <p class="intro" data-lang="es">
-      ¿Te interesa una obra o un encargo personalizado? Escríbeme.
-    </p>
     <p class="intro" data-lang="en">
       Interested in a work or a custom commission? Write to me.
     </p>
+    <p class="intro" data-lang="es">
+      ¿Te interesa una obra o un encargo personalizado? Escríbeme.
+    </p>
 
     <div class="botones-contacto">
-      <a class="boton" href="https://ko-fi.com/tuusuario" target="_blank" data-lang="es">Ko-fi</a>
-      <a class="boton" href="https://ko-fi.com/tuusuario" target="_blank" data-lang="en">Ko-fi</a>
+      <a class="boton" href="https://ko-fi.com/tuusuario" target="_blank">Ko-fi</a>
       <a class="boton" href="https://www.instagram.com/tuusuario" target="_blank">Instagram</a>
-      <a class="boton" href="mailto:tucorreo@ejemplo.com" data-lang="es">Correo</a>
       <a class="boton" href="mailto:tucorreo@ejemplo.com" data-lang="en">Email</a>
+      <a class="boton" href="mailto:tucorreo@ejemplo.com" data-lang="es">Correo</a>
     </div>
   </section>
 
   <!-- PIE -->
   <footer>
-    <p data-lang="es">© 2026 Tu Nombre · Hecho con GitHub Pages.</p>
-    <p data-lang="en">© 2026 Your Name · Made with GitHub Pages.</p>
+    <p data-lang="en">© 2026 Sísifo · Made with GitHub Pages.</p>
+    <p data-lang="es">© 2026 Sísifo · Hecho con GitHub Pages.</p>
   </footer>
 
   <script>
-    document.documentElement.lang = 'es';
+    // Inglés por defecto
+    document.documentElement.lang = 'en';
+
     function toggleLang() {
       const html = document.documentElement;
-      html.lang = (html.lang === 'es') ? 'en' : 'es';
+      html.lang = (html.lang === 'en') ? 'es' : 'en';
     }
   </script>
 
