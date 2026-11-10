@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sísifo | Ink & Oil — Artist in Mexico</title>
-  <meta name="description" content="Bilingual portfolio of ink drawings and oil paintings by Sísifo, an artist based in Mexico. Personal work and commissions." />
+  <title>Sísifo | Drawing, Oil & Digital — Artist in Mexico</title>
+  <meta name="description" content="Professional portfolio of drawing, oil painting and digital work by Sísifo, an artist based in Mexico. Personal work and commissions." />
   <style>
     :root {
       --bg: #0a0a0a;
@@ -32,12 +32,10 @@
       letter-spacing: 0.05em;
     }
 
-    /* Ocultar el idioma no activo */
     [data-lang] { display: none; }
     html[lang="en"] [data-lang="en"],
     html[lang="es"] [data-lang="es"] { display: block; }
 
-    /* Selector de idioma */
     .lang-switch {
       position: fixed;
       top: 2rem;
@@ -54,12 +52,8 @@
       transition: all 0.3s ease;
       font-family: inherit;
     }
-    .lang-switch:hover {
-      color: var(--text);
-      border-color: var(--text);
-    }
+    .lang-switch:hover { color: var(--text); border-color: var(--text); }
 
-    /* Encabezado */
     header {
       min-height: 90vh;
       display: flex;
@@ -85,7 +79,6 @@
       max-width: 600px;
     }
 
-    /* Navegación */
     nav {
       position: sticky;
       top: 0;
@@ -94,7 +87,7 @@
       z-index: 50;
       display: flex;
       justify-content: center;
-      gap: 3rem;
+      gap: 2.5rem;
       padding: 1.5rem;
       border-bottom: 1px solid var(--line);
       flex-wrap: wrap;
@@ -119,7 +112,7 @@
     h2 {
       font-size: 1.8rem;
       text-align: center;
-      margin-bottom: 4rem;
+      margin-bottom: 1.5rem;
       color: var(--text);
       position: relative;
       padding-bottom: 1.5rem;
@@ -144,10 +137,9 @@
       line-height: 1.8;
     }
 
-    /* Galería */
     .galeria {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 3rem 2rem;
     }
 
@@ -174,7 +166,7 @@
     }
 
     .obra-info h3 {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       margin-bottom: 0.5rem;
       font-family: Georgia, serif;
       font-weight: normal;
@@ -185,7 +177,6 @@
       font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      margin-bottom: 1.5rem;
     }
 
     .boton {
@@ -205,7 +196,6 @@
       border-color: var(--text);
     }
 
-    /* Sobre mí */
     #sobre-mi .intro {
       text-align: left;
       max-width: 800px;
@@ -215,7 +205,17 @@
     }
     #sobre-mi p + p { margin-top: 1.5rem; }
 
-    /* Contacto */
+    #colabora .intro {
+      text-align: left;
+      max-width: 800px;
+      color: var(--text);
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    #colabora p + p { margin-top: 1.5rem; }
+
+    .centrado { text-align: center; }
+
     .contacto { text-align: center; }
     .contacto p { color: var(--muted); margin-bottom: 3rem; }
 
@@ -246,7 +246,7 @@
 
     @media (max-width: 600px) {
       header h1 { font-size: 2.2rem; }
-      nav { gap: 1.5rem; }
+      nav { gap: 1.2rem; }
       section { padding: 4rem 1.5rem; }
       .galeria { grid-template-columns: 1fr; }
     }
@@ -254,109 +254,253 @@
 </head>
 <body>
 
-  <!-- SELECTOR DE IDIOMA -->
   <button class="lang-switch" id="langSwitch" onclick="toggleLang()">ES / EN</button>
 
-  <!-- ENCABEZADO -->
   <header>
     <h1>Sísifo</h1>
-    <p data-lang="en">Ink drawing · Oil painting · Mexico</p>
-    <p data-lang="es">Dibujo a tinta · Pintura al óleo · México</p>
+    <p data-lang="en">Drawing · Oil · Digital · Mexico</p>
+    <p data-lang="es">Dibujo · Óleo · Digital · México</p>
   </header>
 
-  <!-- NAVEGACIÓN -->
   <nav>
-    <a href="#galeria" data-lang="en">Gallery</a>
-    <a href="#galeria" data-lang="es">Galería</a>
+    <a href="#drawing" data-lang="en">Drawing</a>
+    <a href="#drawing" data-lang="es">Dibujo</a>
+    <a href="#oil" data-lang="en">Oil</a>
+    <a href="#oil" data-lang="es">Óleo</a>
+    <a href="#digital" data-lang="en">Digital</a>
+    <a href="#digital" data-lang="es">Digital</a>
     <a href="#sobre-mi" data-lang="en">About</a>
     <a href="#sobre-mi" data-lang="es">Sobre mí</a>
+    <a href="#colabora" data-lang="en">Support</a>
+    <a href="#colabora" data-lang="es">Colabora</a>
     <a href="#contacto" data-lang="en">Contact</a>
     <a href="#contacto" data-lang="es">Contacto</a>
   </nav>
 
-  <!-- GALERÍA -->
-  <section id="galeria">
-    <h2 data-lang="en">Recent work</h2>
-    <h2 data-lang="es">Trabajo reciente</h2>
+  <!-- ================= DRAWING / DIBUJO (8) ================= -->
+  <section id="drawing">
+    <h2 data-lang="en">Drawing</h2>
+    <h2 data-lang="es">Dibujo</h2>
 
     <p class="intro" data-lang="en">
-      A selection of ink drawings and oil paintings.
+      Ink and graphite works on paper. A selection from my ongoing practice.
     </p>
     <p class="intro" data-lang="es">
-      Una selección de dibujos a tinta y pinturas al óleo.
+      Obras a tinta y grafito sobre papel. Una selección de mi práctica en curso.
     </p>
 
     <div class="galeria">
 
-      <!-- Obra 1 -->
       <div class="obra">
-        <img src="imagenes/obra1.jpg" alt="Ink drawing by Sísifo / Dibujo a tinta de Sísifo" />
+        <img src="imagenes/drawing1.jpg" alt="Drawing by Sísifo / Dibujo de Sísifo" />
         <div class="obra-info">
-          <h3 data-lang="en">Artwork title</h3>
-          <h3 data-lang="es">Título de la obra</h3>
+          <h3 data-lang="en">Title</h3>
+          <h3 data-lang="es">Título</h3>
           <p data-lang="en">Ink on paper · 2026</p>
           <p data-lang="es">Tinta sobre papel · 2026</p>
-          <a class="boton" href="#" target="_blank" data-lang="en">View / Buy</a>
-          <a class="boton" href="#" target="_blank" data-lang="es">Ver / Comprar</a>
         </div>
       </div>
 
-      <!-- Obra 2 -->
       <div class="obra">
-        <img src="imagenes/obra2.jpg" alt="Ink drawing by Sísifo / Dibujo a tinta de Sísifo" />
+        <img src="imagenes/drawing2.jpg" alt="Drawing by Sísifo / Dibujo de Sísifo" />
         <div class="obra-info">
-          <h3 data-lang="en">Artwork title</h3>
-          <h3 data-lang="es">Título de la obra</h3>
+          <h3 data-lang="en">Title</h3>
+          <h3 data-lang="es">Título</h3>
           <p data-lang="en">Ink on paper · 2026</p>
           <p data-lang="es">Tinta sobre papel · 2026</p>
-          <a class="boton" href="#" target="_blank" data-lang="en">View / Buy</a>
-          <a class="boton" href="#" target="_blank" data-lang="es">Ver / Comprar</a>
         </div>
       </div>
 
-      <!-- Obra 3 -->
       <div class="obra">
-        <img src="imagenes/obra3.jpg" alt="Oil painting by Sísifo / Pintura al óleo de Sísifo" />
+        <img src="imagenes/drawing3.jpg" alt="Drawing by Sísifo / Dibujo de Sísifo" />
         <div class="obra-info">
-          <h3 data-lang="en">Artwork title</h3>
-          <h3 data-lang="es">Título de la obra</h3>
-          <p data-lang="en">Oil on canvas · 2026</p>
-          <p data-lang="es">Óleo sobre lienzo · 2026</p>
-          <a class="boton" href="#" target="_blank" data-lang="en">View / Buy</a>
-          <a class="boton" href="#" target="_blank" data-lang="es">Ver / Comprar</a>
+          <h3 data-lang="en">Title</h3>
+          <h3 data-lang="es">Título</h3>
+          <p data-lang="en">Ink on paper · 2026</p>
+          <p data-lang="es">Tinta sobre papel · 2026</p>
         </div>
       </div>
 
-      <!-- Obra 4 -->
       <div class="obra">
-        <img src="imagenes/obra4.jpg" alt="Oil painting by Sísifo / Pintura al óleo de Sísifo" />
+        <img src="imagenes/drawing4.jpg" alt="Drawing by Sísifo / Dibujo de Sísifo" />
         <div class="obra-info">
-          <h3 data-lang="en">Artwork title</h3>
-          <h3 data-lang="es">Título de la obra</h3>
-          <p data-lang="en">Oil on canvas · 2026</p>
-          <p data-lang="es">Óleo sobre lienzo · 2026</p>
-          <a class="boton" href="#" target="_blank" data-lang="en">View / Buy</a>
-          <a class="boton" href="#" target="_blank" data-lang="es">Ver / Comprar</a>
+          <h3 data-lang="en">Title</h3>
+          <h3 data-lang="es">Título</h3>
+          <p data-lang="en">Ink on paper · 2026</p>
+          <p data-lang="es">Tinta sobre papel · 2026</p>
+        </div>
+      </div>
+
+      <div class="obra">
+        <img src="imagenes/drawing5.jpg" alt="Drawing by Sísifo / Dibujo de Sísifo" />
+        <div class="obra-info">
+          <h3 data-lang="en">Title</h3>
+          <h3 data-lang="es">Título</h3>
+          <p data-lang="en">Ink on paper · 2026</p>
+          <p data-lang="es">Tinta sobre papel · 2026</p>
+        </div>
+      </div>
+
+      <div class="obra">
+        <img src="imagenes/drawing6.jpg" alt="Drawing by Sísifo / Dibujo de Sísifo" />
+        <div class="obra-info">
+          <h3 data-lang="en">Title</h3>
+          <h3 data-lang="es">Título</h3>
+          <p data-lang="en">Ink on paper · 2026</p>
+          <p data-lang="es">Tinta sobre papel · 2026</p>
+        </div>
+      </div>
+
+      <div class="obra">
+        <img src="imagenes/drawing7.jpg" alt="Drawing by Sísifo / Dibujo de Sísifo" />
+        <div class="obra-info">
+          <h3 data-lang="en">Title</h3>
+          <h3 data-lang="es">Título</h3>
+          <p data-lang="en">Ink on paper · 2026</p>
+          <p data-lang="es">Tinta sobre papel · 2026</p>
+        </div>
+      </div>
+
+      <div class="obra">
+        <img src="imagenes/drawing8.jpg" alt="Drawing by Sísifo / Dibujo de Sísifo" />
+        <div class="obra-info">
+          <h3 data-lang="en">Title</h3>
+          <h3 data-lang="es">Título</h3>
+          <p data-lang="en">Ink on paper · 2026</p>
+          <p data-lang="es">Tinta sobre papel · 2026</p>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- SOBRE MÍ -->
+  <!-- ================= OIL / ÓLEO (4) ================= -->
+  <section id="oil">
+    <h2 data-lang="en">Oil</h2>
+    <h2 data-lang="es">Óleo</h2>
+
+    <p class="intro" data-lang="en">
+      Oil paintings on canvas. Works in progress and finished pieces.
+    </p>
+    <p class="intro" data-lang="es">
+      Pinturas al óleo sobre lienzo. Obras en proceso y piezas terminadas.
+    </p>
+
+    <div class="galeria">
+
+      <div class="obra">
+        <img src="imagenes/oil1.jpg" alt="Oil painting by Sísifo / Pintura al óleo de Sísifo" />
+        <div class="obra-info">
+          <h3 data-lang="en">Title</h3>
+          <h3 data-lang="es">Título</h3>
+          <p data-lang="en">Oil on canvas · 2026</p>
+          <p data-lang="es">Óleo sobre lienzo · 2026</p>
+        </div>
+      </div>
+
+      <div class="obra">
+        <img src="imagenes/oil2.jpg" alt="Oil painting by Sísifo / Pintura al óleo de Sísifo" />
+        <div class="obra-info">
+          <h3 data-lang="en">Title</h3>
+          <h3 data-lang="es">Título</h3>
+          <p data-lang="en">Oil on canvas · 2026</p>
+          <p data-lang="es">Óleo sobre lienzo · 2026</p>
+        </div>
+      </div>
+
+      <div class="obra">
+        <img src="imagenes/oil3.jpg" alt="Oil painting by Sísifo / Pintura al óleo de Sísifo" />
+        <div class="obra-info">
+          <h3 data-lang="en">Title</h3>
+          <h3 data-lang="es">Título</h3>
+          <p data-lang="en">Oil on canvas · 2026</p>
+          <p data-lang="es">Óleo sobre lienzo · 2026</p>
+        </div>
+      </div>
+
+      <div class="obra">
+        <img src="imagenes/oil4.jpg" alt="Oil painting by Sísifo / Pintura al óleo de Sísifo" />
+        <div class="obra-info">
+          <h3 data-lang="en">Title</h3>
+          <h3 data-lang="es">Título</h3>
+          <p data-lang="en">Oil on canvas · 2026</p>
+          <p data-lang="es">Óleo sobre lienzo · 2026</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= DIGITAL (4) ================= -->
+  <section id="digital">
+    <h2>Digital</h2>
+
+    <p class="intro" data-lang="en">
+      Digital illustrations and experiments.
+    </p>
+    <p class="intro" data-lang="es">
+      Ilustraciones digitales y experimentos.
+    </p>
+
+    <div class="galeria">
+
+      <div class="obra">
+        <img src="imagenes/digital1.jpg" alt="Digital work by Sísifo / Obra digital de Sísifo" />
+        <div class="obra-info">
+          <h3 data-lang="en">Title</h3>
+          <h3 data-lang="es">Título</h3>
+          <p data-lang="en">Digital · 2026</p>
+          <p data-lang="es">Digital · 2026</p>
+        </div>
+      </div>
+
+      <div class="obra">
+        <img src="imagenes/digital2.jpg" alt="Digital work by Sísifo / Obra digital de Sísifo" />
+        <div class="obra-info">
+          <h3 data-lang="en">Title</h3>
+          <h3 data-lang="es">Título</h3>
+          <p data-lang="en">Digital · 2026</p>
+          <p data-lang="es">Digital · 2026</p>
+        </div>
+      </div>
+
+      <div class="obra">
+        <img src="imagenes/digital3.jpg" alt="Digital work by Sísifo / Obra digital de Sísifo" />
+        <div class="obra-info">
+          <h3 data-lang="en">Title</h3>
+          <h3 data-lang="es">Título</h3>
+          <p data-lang="en">Digital · 2026</p>
+          <p data-lang="es">Digital · 2026</p>
+        </div>
+      </div>
+
+      <div class="obra">
+        <img src="imagenes/digital4.jpg" alt="Digital work by Sísifo / Obra digital de Sísifo" />
+        <div class="obra-info">
+          <h3 data-lang="en">Title</h3>
+          <h3 data-lang="es">Título</h3>
+          <p data-lang="en">Digital · 2026</p>
+          <p data-lang="es">Digital · 2026</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SOBRE MÍ ================= -->
   <section id="sobre-mi">
     <h2 data-lang="en">About</h2>
     <h2 data-lang="es">Sobre mí</h2>
 
     <p class="intro" data-lang="en">
-      I am Sísifo, an artist based in Mexico. I work in ink drawing and oil
-      painting from a single search: form and subject are born from the same
+      I am Sísifo, an artist based in Mexico. I work in drawing, oil painting and
+      digital media from a single search: form and subject are born from the same
       place. I am interested in art that does not console, but reveals.
     </p>
     <p class="intro" data-lang="es">
-      Soy Sísifo, artista radicado en México. Trabajo el dibujo a tinta y la
-      pintura al óleo desde una misma búsqueda: la forma y el tema nacen del
-      mismo lugar. Me interesa el arte que no consuela, sino que muestra.
+      Soy Sísifo, artista radicado en México. Trabajo el dibujo, la pintura al
+      óleo y el medio digital desde una misma búsqueda: la forma y el tema nacen
+      del mismo lugar. Me interesa el arte que no consuela, sino que muestra.
     </p>
 
     <p class="intro" data-lang="en">
@@ -370,7 +514,29 @@
     </p>
   </section>
 
-  <!-- CONTACTO -->
+  <!-- ================= COLABORA / SUPPORT ================= -->
+  <section id="colabora">
+    <h2 data-lang="en">Support my work</h2>
+    <h2 data-lang="es">Colabora con mi trabajo</h2>
+
+    <p class="intro" data-lang="en">
+      If you would like to support my practice or are interested in acquiring a
+      piece, you can do so through my Ko-fi page. Every contribution helps me
+      keep working: materials, studio time, and new work.
+    </p>
+    <p class="intro" data-lang="es">
+      Si quieres apoyar mi práctica o te interesa adquirir una pieza, puedes
+      hacerlo a través de mi página de Ko-fi. Cada contribución me ayuda a
+      seguir trabajando: materiales, tiempo de estudio y obra nueva.
+    </p>
+
+    <p class="centrado">
+      <a class="boton" href="https://ko-fi.com/tuusuario" target="_blank" data-lang="en">Visit my Ko-fi</a>
+      <a class="boton" href="https://ko-fi.com/tuusuario" target="_blank" data-lang="es">Visitar mi Ko-fi</a>
+    </p>
+  </section>
+
+  <!-- ================= CONTACTO ================= -->
   <section id="contacto">
     <h2 data-lang="en">Contact & commissions</h2>
     <h2 data-lang="es">Contacto y encargos</h2>
@@ -385,19 +551,16 @@
     <div class="botones-contacto">
       <a class="boton" href="https://ko-fi.com/tuusuario" target="_blank">Ko-fi</a>
       <a class="boton" href="https://www.instagram.com/tuusuario" target="_blank">Instagram</a>
-      <a class="boton" href="mailto:tucorreo@ejemplo.com" data-lang="en">Email</a>
-      <a class="boton" href="mailto:tucorreo@ejemplo.com" data-lang="es">Correo</a>
+      <a class="boton" href="mailto:tucorreo@ejemplo.com">Email</a>
     </div>
   </section>
 
-  <!-- PIE -->
   <footer>
     <p data-lang="en">© 2026 Sísifo · Made with GitHub Pages.</p>
     <p data-lang="es">© 2026 Sísifo · Hecho con GitHub Pages.</p>
   </footer>
 
   <script>
-    // Inglés por defecto
     document.documentElement.lang = 'en';
 
     function toggleLang() {
